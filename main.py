@@ -4,8 +4,8 @@ import discord
 from discord.ext import commands
 
 TOKEN = os.getenv("DISCORD_TOKEN")
+LOG_CHANNEL_ID = os.getenv("LOG_CHANNEL_ID")
 
-log_channel_id = 1417224098915942431
 bot = commands.Bot(
     command_prefix="!",
     intents=discord.Intents.all(),
@@ -30,7 +30,7 @@ async def on_message_delete(message):
         value=message.content,
     )
 
-    log_channel = bot.get_channel(log_channel_id)
+    log_channel = bot.get_channel(LOG_CHANNEL_ID)
     await log_channel.send(embed=embed)
 
 
@@ -52,7 +52,7 @@ async def on_message_edit(message_before, message_after):
         value=message_after.content,
     )
 
-    log_channel = bot.get_channel(log_channel_id)
+    log_channel = bot.get_channel(LOG_CHANNEL_ID)
     await log_channel.send(embed=embed)
 
 

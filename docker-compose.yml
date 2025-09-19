@@ -1,0 +1,9 @@
+services:
+  200-not-a-quail:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: 200-not-a-quail
+    environment:
+      DISCORD_TOKEN: <replace me>
+      LOG_CHANNEL_ID: <replace me>
