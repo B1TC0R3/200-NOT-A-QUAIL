@@ -3,8 +3,8 @@ import discord
 
 from discord.ext import commands
 
-TOKEN = os.getenv("DISCORD_TOKEN")
-LOG_CHANNEL_ID = os.getenv("LOG_CHANNEL_ID")
+TOKEN = os.getenv("DISCORD_TOKEN", None)
+LOG_CHANNEL_ID = int(os.getenv("LOG_CHANNEL_ID", 0))
 
 bot = commands.Bot(
     command_prefix="!",
